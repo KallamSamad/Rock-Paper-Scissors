@@ -2,8 +2,18 @@
 
  function getComputerChoice (){
 
- 
-    console.log(Math.floor(Math.random()*3)+1)
+    let choice=Math.floor(Math.random()*3)+1
+    if (choice===1){
+        return console.log("rock")
+    }
+    
+    else if (choice===2){
+        return console.log("paper")
+    }
+
+    else if (choice===3){
+        return console.log("scissors")
+    }
  }
 
 
