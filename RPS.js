@@ -1,5 +1,6 @@
  console.log("The JS file is connected")
 
+ let score =0
  state =false
 
  function getComputerChoice (){
