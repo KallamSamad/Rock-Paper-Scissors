@@ -25,22 +25,21 @@ let compScore=0
 
  function getHumanChoice(askUser){
     if (askUser == "rock") {
-        console.log("You chose rock")
+        humanOutput.textContent="You chose rock"
         return  "rock" 
     }
     else if  (askUser == "paper"){
-        console.log(" You chose paper")
+        humanOutput.textContent=" You chose paper"
         return "paper"
     }
         
     else if (askUser == "scissors"){
-        console.log("You chose scissors")
+        humanOutput.textContent= "You chose scissors"
         return "scissors"
     }
     
     else{
-       return getHumanChoice()
-        
+       return null;
     }
         
 }
@@ -58,7 +57,7 @@ function playRound(humanChoice, computerChoice){
     }
     else if ( humanChoice == "paper" && computerChoice =="scissors"){
          compScore++
-          humanCount.textContent=`Your score is ${humanScore}}`
+          humanCount.textContent=`Your score is ${humanScore}`
            compCount.textContent=`Computer score is ${compScore}` 
     }
     else if ( humanChoice == "scissors" && computerChoice =="paper"){
@@ -75,7 +74,7 @@ function playRound(humanChoice, computerChoice){
     else if ( humanChoice== "rock" && computerChoice =="scissors"){
         humanScore++
         humanCount.textContent =`Your score is ${humanScore} ` 
-         ompCount.textContent=`Computer score is ${compScore}` 
+        compCount.textContent=`Computer score is ${compScore}` 
 
     }
      else if ( humanChoice== computerChoice) {
@@ -83,13 +82,16 @@ function playRound(humanChoice, computerChoice){
        humanCount.textContent=` Your score is ${humanScore} ` 
        compCount.textContent=`Computer score is ${compScore}` 
     }
-playRound(getComputerChoice(),getHumanChoice())
 }
 
 const division =document.createElement("div");
 division.style.backgroundColor = "pink";
 document.body.appendChild(division);
 
+
+const container = document.createElement("div")
+container.classList.add("container")
+division.appendChild(container)
 
 const humanCount = document.createElement("div")
 humanCount.innerHTML = ""
@@ -103,36 +105,42 @@ compCount.style.color="red"
 compCount.classList.add("compCount")
 division.appendChild(compCount)
 
-const container = document.createElement("div")
-container.classList.add("container")
-division.appendChild(container)
-
 
 const compCont = document.createElement("div")
 compCont.style.backgroundColor ="gold"
 compCont.classList.add("compCont")
 division.appendChild(compCont)
 
+
+
 const playBtn1 = document.createElement("button");
 playBtn1.textContent = "Rock";
 playBtn1.style.backgroundColor="red";
 container.appendChild(playBtn1);
-playBtn1.addEventListener("click", ()=> getComputerChoice("rock"))
+playBtn1.classList.add("button")
+playBtn1.addEventListener("click", ()=> {playRound(getHumanChoice("rock"), getComputerChoice())})
+
 
 const playBtn2 = document.createElement("button");
 playBtn2.textContent = "Paper";
 playBtn2.style.backgroundColor="blue";
 container.appendChild(playBtn2);
-playBtn2.addEventListener("click", ()=> getComputerChoice("paper"))
+playBtn2.classList.add("button")
+playBtn2.addEventListener("click", ()=> {playRound(getHumanChoice("paper"), getComputerChoice())})
 
 const playBtn3 = document.createElement("button");
 playBtn3.textContent = "Scissors";
 playBtn3.style.backgroundColor="green";
 container.appendChild(playBtn3);
-playBtn3.addEventListener("click", ()=> getComputerChoice("scissors"))
+playBtn3.classList.add("button")
+playBtn3.addEventListener("click", ()=> {playRound(getHumanChoice("scissors"), getComputerChoice())})
 
 const computerOutput = document.createElement("div");
 computerOutput.innerHTML = ""
 compCont.appendChild(computerOutput)
+
+const humanOutput = document.createElement("div");
+humanOutput.innerHTML = ""
+compCont.appendChild(humanOutput)
 
 playRound(getComputerChoice);
