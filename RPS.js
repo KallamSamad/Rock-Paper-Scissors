@@ -79,4 +79,11 @@ function playRound(humanChoice, computerChoice){
 playRound(getComputerChoice(),getHumanChoice())
 }
 
-playRound(getComputerChoice(),getHumanChoice())
+const division =document.createElement("div");
+division.textContent = "I'm a div";
+document.body.appendChild(division);
+
+const playBtn = document.createElement("button");
+playBtn.textContent = "Press to Start";
+playBtn.style.backgroundColor="red";
+division.appendChild(playBtn);
