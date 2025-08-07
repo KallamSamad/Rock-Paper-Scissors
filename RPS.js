@@ -83,19 +83,23 @@ const division =document.createElement("div");
 division.style.backgroundColor = "pink";
 document.body.appendChild(division);
 
+const container = document.createElement("div")
+container.classList.add("container")
+division.appendChild(container)
+
 const playBtn1 = document.createElement("button");
-playBtn1.textContent = "Rockt";
+playBtn1.textContent = "Rock";
 playBtn1.style.backgroundColor="red";
-division.appendChild(playBtn1);
+container.appendChild(playBtn1);
 
 const playBtn2 = document.createElement("button");
 playBtn2.textContent = "Paper";
 playBtn2.style.backgroundColor="blue";
-division.appendChild(playBtn2);
+container.appendChild(playBtn2);
 
 const playBtn3 = document.createElement("button");
 playBtn3.textContent = "Scissors";
 playBtn3.style.backgroundColor="green";
-division.appendChild(playBtn3);
+container.appendChild(playBtn3);
 
 
