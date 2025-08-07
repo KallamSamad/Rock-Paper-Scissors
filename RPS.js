@@ -6,17 +6,17 @@ let compScore=0
 
     let compChoice=Math.floor(Math.random()*3)+1
     if (compChoice===1){
-        console.log("Computer chose rock")
+        computerOutput.textContent="Computer chose rock"
         return "rock"
     }
     
     else if (compChoice===2){
-         console.log("Computer chose paper")
+        computerOutput.textContent="Computer chose paper"
         return "paper"
     }
 
     else if (compChoice===3){
-        console.log("Computer chose scissors")
+         computerOutput.textContent="Computer chose scissors"
         return "scissors"
     }
  }
@@ -83,9 +83,15 @@ const division =document.createElement("div");
 division.style.backgroundColor = "pink";
 document.body.appendChild(division);
 
+ 
+
 const container = document.createElement("div")
 container.classList.add("container")
 division.appendChild(container)
+
+const compCont = document.createElement("div")
+compCont.style.backgroundColor ="gold"
+division.appendChild(compCont)
 
 const playBtn1 = document.createElement("button");
 playBtn1.textContent = "Rock";
@@ -102,4 +108,8 @@ playBtn3.textContent = "Scissors";
 playBtn3.style.backgroundColor="green";
 container.appendChild(playBtn3);
 
+const computerOutput = document.createElement("div");
+computerOutput.innerHTML = ""
+compCont.appendChild(computerOutput)
 
+playRound(getComputerChoice);
