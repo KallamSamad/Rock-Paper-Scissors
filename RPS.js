@@ -80,10 +80,22 @@ playRound(getComputerChoice(),getHumanChoice())
 }
 
 const division =document.createElement("div");
-division.textContent = "I'm a div";
+division.style.backgroundColor = "pink";
 document.body.appendChild(division);
 
-const playBtn = document.createElement("button");
-playBtn.textContent = "Press to Start";
-playBtn.style.backgroundColor="red";
-division.appendChild(playBtn);
+const playBtn1 = document.createElement("button");
+playBtn1.textContent = "Rockt";
+playBtn1.style.backgroundColor="red";
+division.appendChild(playBtn1);
+
+const playBtn2 = document.createElement("button");
+playBtn2.textContent = "Paper";
+playBtn2.style.backgroundColor="blue";
+division.appendChild(playBtn2);
+
+const playBtn3 = document.createElement("button");
+playBtn3.textContent = "Scissors";
+playBtn3.style.backgroundColor="green";
+division.appendChild(playBtn3);
+
+
