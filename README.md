@@ -10,3 +10,7 @@ Here is an image of what happens when you start the game, as you can see, the us
 
 
 ## How to install
+1. Clone or fork the main branch
+2. Run index.html in your web browser
+
+   
