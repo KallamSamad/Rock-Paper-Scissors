@@ -6,4 +6,4 @@ A simple rock, paper, scissors game against a computer. Made using DOM manipulat
 <img width="1911" height="263" alt="image" src="https://github.com/user-attachments/assets/22d09e13-5acc-43e6-b2b9-ec6c53ac78bd" />
 
 
-#How to install
+## How to install
